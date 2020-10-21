@@ -1,5 +1,5 @@
 # nuxt_amp_demo
-
+- Nuxt x Vuetify
 ## Servr Setup
 ```
 $ docker-compose build
