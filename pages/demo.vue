@@ -33,12 +33,32 @@
 <script>
 export default {
   amp: 'hybrid',
-  ampLayout: 'default.amp', // ampの時にlayoutが変わる
+  ampLayout: 'default.amp',
 
-  head() {
+  data() {
     return {
       title: 'AMP - DEMO',
-      titleTemplate: '',
+    }
+  }, // ampの時にlayoutが変わる
+
+  head() {
+    if (!this.$isAMP) {
+      return {
+        title: this.title,
+        titleTemplate: '',
+      }
+    } else {
+      return {
+        title: this.title,
+        titleTemplate: '',
+        link: [
+          {
+            hid: 'canonical',
+            rel: 'canonical',
+            href: '/demo',
+          },
+        ],
+      }
     }
   },
 }
